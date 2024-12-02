@@ -43,16 +43,15 @@ function TabScreens() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Sesión">
-        <Drawer.Screen name="Sesión" component={HomeScreen} options={{ headerShown: false }} />
+      <Drawer.Navigator initialRouteName="Cerrar sesión">
         <Drawer.Screen name="Inicio" component={TabScreens} />
         <Drawer.Screen name="Acerca de..." component={About} />
         <Drawer.Screen name="Ayuda y Soporte técnico" component={Help} />
         <Drawer.Screen name="Notificaciones" component={Notifications} />
         <Drawer.Screen name="Términos y condiciones" component={Terms} />
         <Drawer.Screen name="Invitar amigos" component={Terms} />
-        <Drawer.Screen name="Login" component={Login} />
-        <Drawer.Screen name="Registro" component={SingUp} />
+        <Drawer.Screen name="Cerrar sesión" component={HomeScreen} options={{ headerShown: false }} />
+
       </Drawer.Navigator>
     </NavigationContainer>
   );
