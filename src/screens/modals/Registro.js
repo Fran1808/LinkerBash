@@ -8,11 +8,28 @@ const ModalRegistro= () => {
 
   return (
     <Center>
-      <Button onPress={() => setShowModal(true)}>Registrarse</Button>
+      <Button
+  onPress={() => setShowModal(true)}
+  style={{
+    backgroundColor: '#F20F7C', // Color de fondo rosa
+    borderRadius: 0, // Sin bordes redondeados
+    borderWidth: 5, // Borde ancho
+    borderColor: 'black', // Borde negro
+  }}
+  _text={{
+    color: 'black', // Color de texto negro
+    fontSize: 24, // Tamaño de letra más grande
+    fontFamily: 'Roboto', // Fuente similar a Roboto
+    fontWeight: '800', // Estilo Extra Bold
+  }}
+>
+  REGISTRARSE
+</Button>
+
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <Modal.Content maxWidth="400px">
+        <Modal.Content maxWidth="400px" style={{ backgroundColor: '#FAFF00' }}>
           <Modal.CloseButton />
-          <Modal.Header>Registrarse</Modal.Header>
+          <Modal.Header style={{ backgroundColor: '#FAFF00' }}>Registrarse</Modal.Header>
           <Modal.Body>
             <FormControl>
               <FormControl.Label>Nombre(s)</FormControl.Label>
@@ -35,7 +52,7 @@ const ModalRegistro= () => {
               <Input />
             </FormControl>
           </Modal.Body>
-          <Modal.Footer>
+          <Modal.Footer style={{ backgroundColor: '#FAFF00' }}>
             <Button.Group space={2}>
               <Button variant="ghost" colorScheme="blueGray" onPress={() => setShowModal(false)}>
                 Cancelar
@@ -45,6 +62,7 @@ const ModalRegistro= () => {
                   setShowModal(false); // Cierra el modal
                   navigation.navigate('Inicio'); // Navega a la pantalla "Inicio"
                 }}
+                style={{ backgroundColor: '#F20F7C' }}
               >
                 Registrarme
               </Button>

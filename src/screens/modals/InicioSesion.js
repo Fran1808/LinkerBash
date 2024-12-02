@@ -8,11 +8,28 @@ const ModalInicio = () => {
 
   return (
     <Center>
-      <Button onPress={() => setShowModal(true)}>Iniciar Sesion</Button>
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <Modal.Content maxWidth="400px">
+      <Button
+  onPress={() => setShowModal(true)}
+  style={{
+    backgroundColor: '#FAFF00', // Color de fondo amarillo
+    borderRadius: 0, // Sin bordes redondeados
+    borderWidth: 5, // Borde ancho
+    borderColor: 'black', // Borde negro
+  }}
+  _text={{
+    color: 'black', // Color de texto negro
+    fontSize: 24, // Tamaño de letra más grande
+    fontFamily: 'Roboto', // Fuente similar a Roboto
+    fontWeight: '800', // Estilo Extra Bold
+  }}
+>
+  INICIAR SESION
+</Button>
+
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} >
+        <Modal.Content maxWidth="400px" style={{ backgroundColor: '#F20F7C' }} >
           <Modal.CloseButton />
-          <Modal.Header>Iniciar Sesion</Modal.Header>
+          <Modal.Header style={{ backgroundColor: '#F20F7C' }}>Iniciar Sesion</Modal.Header>
           <Modal.Body>
             <FormControl>
               <FormControl.Label>Usuario</FormControl.Label>
@@ -23,9 +40,9 @@ const ModalInicio = () => {
               <Input />
             </FormControl>
           </Modal.Body>
-          <Modal.Footer>
+          <Modal.Footer style={{ backgroundColor: '#F20F7C' }}>
             <Button.Group space={2}>
-              <Button variant="ghost" colorScheme="blueGray" onPress={() => setShowModal(false)}>
+              <Button variant="ghost" colorScheme="FAFF00" onPress={() => setShowModal(false)}>
                 Cancelar
               </Button>
               <Button 
@@ -33,6 +50,7 @@ const ModalInicio = () => {
                   setShowModal(false); // Cierra el modal
                   navigation.navigate('Inicio'); // Navega a la pantalla "Inicio"
                 }}
+                style={{ backgroundColor: '#FAFF00' }}
               >
                 Acceder
               </Button>

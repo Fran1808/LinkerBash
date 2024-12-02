@@ -8,7 +8,7 @@ export default function App() {
     <NativeBaseProvider>
       <Box flex={1} safeArea>
         <HStack flex={1}>
-          <Box flex={1} bg="rgba(127, 255, 212, 0.5)" justifyContent="flex-start" alignItems="center" p={4}>
+          <Box flex={1} bg="#0075FF" justifyContent="flex-start" alignItems="center" p={4}>
             <Text fontSize="xl" mt={5}>LinkerBash</Text>
             <Center flex={1}><ModalInicio /> <ModalRegistro /></Center>
           </Box>
