@@ -7,18 +7,6 @@ function HomeScreen({navigation}){
             onPress={()=>navigation.navigate('Calendar')}
             title="Agenda"
             />
-            <Button
-            onPress={()=>navigation.navigate('Memories')}
-            title="Recuerdos"
-            />
-            <Button
-            onPress={()=>navigation.navigate('Organize')}
-            title="Organizar"
-            />
-            <Button
-            onPress={()=>navigation.navigate('Profile')}
-            title="Perfil"
-            />
         </View>
     );
 }

@@ -7,10 +7,6 @@ function HomeScreen({navigation}){
             onPress={()=>navigation.navigate('Memories2')}
             title="Añadir recuerdos"
             />
-            <Button
-            onPress={()=>navigation.navigate('Events')}
-            title="Eventos"
-            />
         </View>
     );
 }

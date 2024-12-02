@@ -7,10 +7,6 @@ function HomeScreen({navigation}){
             onPress={()=>navigation.navigate('Profile2')}
             title="Editar perfil"
             />
-            <Button
-            onPress={()=>navigation.navigate('Events')}
-            title="Eventos"
-            />
         </View>
     );
 }

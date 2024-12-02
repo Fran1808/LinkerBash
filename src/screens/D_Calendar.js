@@ -7,10 +7,6 @@ function HomeScreen({navigation}){
             onPress={()=>navigation.navigate('Calendar2')}
             title="Lista de eventos"
             />
-            <Button
-            onPress={()=>navigation.navigate('Events')}
-            title="Eventos"
-            />
         </View>
     );
 }

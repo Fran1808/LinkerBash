@@ -7,10 +7,6 @@ function HomeScreen({navigation}){
             onPress={()=>navigation.navigate('Organize2')}
             title="Crear evento"
             />
-            <Button
-            onPress={()=>navigation.navigate('Events')}
-            title="Eventos"
-            />
         </View>
     );
 }
