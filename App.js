@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import HomeScreen from "./src/screens/A_HomeScreen";
 import Events from "./src/screens/C_Events";
@@ -12,19 +12,35 @@ import Memories from "./src/screens/D_Memories";
 import Organize from "./src/screens/D_Organize";
 import Profile from "./src/screens/D_Profile";
 
+import D_Organize2 from './src/screens/D_Organize2';
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-// Componente para el menú de pestañas
 function TabScreens() {
   return (
     <Tab.Navigator
-      initialRouteName="Eventos" // Configura "Eventos" como la pantalla inicial en las pestañas
-      screenOptions={{
-        tabBarStyle: { position: "absolute" }, // Asegura que el menú esté en la parte inferior
-        tabBarActiveTintColor: "blue", // Color de la pestaña activa
-        tabBarInactiveTintColor: "gray", // Color de las pestañas inactivas
-      }}
+      initialRouteName="Eventos"
+      screenOptions={({ route }) => ({
+        tabBarStyle: { position: "absolute" },
+        tabBarActiveTintColor: "blue",
+        tabBarInactiveTintColor: "gray",
+        tabBarIcon: ({ color, size }) => {
+          let iconName;
+          if (route.name === "Organizar") {
+            iconName = "create-outline"; 
+          } else if (route.name === "Agenda") {
+            iconName = "calendar-outline";
+          } else if (route.name === "Eventos") {
+            iconName = "people-outline";
+          } else if (route.name === "Recuerdos") {
+            iconName = "images-outline";
+          } else if (route.name === "Perfil") {
+            iconName = "person-circle-outline";
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+      })}
     >
       <Tab.Screen name="Organizar" component={Organize} options={{ headerShown: false }} />
       <Tab.Screen name="Agenda" component={Calendar} options={{ headerShown: false }} />
@@ -41,6 +57,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Inicio" component={TabScreens} options={{ headerShown: false }} />
+        <Stack.Screen name="D_Organize2" component={D_Organize2} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
